@@ -4,3 +4,11 @@
 
 # python
 env
+
+# latex
+*.aux
+*.nav
+*.out
+*.snm
+*.toc
+*.log
