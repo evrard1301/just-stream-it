@@ -1,0 +1,53 @@
+.best_movie {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8rem;
+    margin-top: 1rem;
+    background-color: invert($primary);
+    box-shadow: 0 0 16px black;
+    border: 1px solid rgb(130, 130, 130);
+    
+    @include for-mobile {
+	flex-direction: column;
+	gap: 2rem;
+    }
+
+    &__header {
+	display: flex;
+	flex-direction: column;	
+	justify-content: space-around;	
+	align-items: center;
+	gap: 2rem;
+	margin: 3rem;
+	width: 30%;
+	
+	@include for-mobile {
+	    width: 100%;
+	    justify-content: flex-start;
+	    gap: 1rem;
+	}
+	
+	.button {	    
+	    @include for-mobile {
+		width: 50%;
+		text-align: center;
+	    }
+	}
+    }
+
+    &__title {
+	font-size: 2rem;
+    }
+
+    &__description {
+	text-align: justify;
+	@include for-mobile {
+	    padding: 1rem;
+	}
+    }
+    
+    &__image {		
+	margin-bottom: 2rem;
+    }
+}

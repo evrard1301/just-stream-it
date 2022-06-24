@@ -1,0 +1,24 @@
+.button {
+    $btn-color-on: $secondary;
+    $btn-color-off: $primary;
+    
+    text-decoration: none;
+    background-color: $btn-color-off;
+    color: invert($primary);
+    font-weight: bold;
+    border-radius: 16px;
+    padding: 1rem 2rem;
+    margin: 0.5rem;
+    
+    &:hover {
+	@keyframes best_movie-button {
+	    from { background-color: $btn-color-off; }
+	    to { background-color: $btn-color-on; }
+	}
+
+	animation-name: best_movie-button;
+	animation-duration: 1s;
+	
+	background-color: $btn-color-on;
+    }
+}

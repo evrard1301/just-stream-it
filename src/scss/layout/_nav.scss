@@ -1,0 +1,62 @@
+nav {
+    display: flex;
+    align-items: baseline;
+
+    @include for-mobile {
+	flex-direction: column;
+    }
+    
+    background-color: $primary;
+    color: white;   
+    
+    h1 {
+	font-size: 1.5rem;
+	margin-left: 1rem;
+
+	@include for-mobile {
+	    width: 100%;
+	    padding: 1rem 0px 1rem 0px;	    
+	    margin: 0px;
+	    text-align: center;
+	    border-bottom: 1px solid rgb(64, 64, 64);
+	}
+    }
+    
+    ul {
+	display: flex;
+	list-style: none;
+	margin-left: 1rem;
+	
+	@include for-mobile {
+	    flex-direction: column;
+	    width: 100%;
+	    margin: 0;
+	    padding: 0;
+	}
+
+	li {
+	    padding: 1.2rem;
+	    
+	    @include for-mobile {
+		text-align: center;
+		overflow: visible;
+	    }
+
+	    &:hover {
+		@keyframes nav-links {
+		    from { background-color: $primary; }
+		    to { background-color: $secondary; }
+		}
+		
+		background-color: $secondary;
+		animation-name: nav-links;
+		animation-duration: 0.3s;
+	    }
+	}
+    }
+    
+    a {
+	color: white;
+	text-decoration: none;
+    }    
+}

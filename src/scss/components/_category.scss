@@ -1,0 +1,42 @@
+.category {
+    border: 2px solid $primary;
+    margin-top: 2rem;
+
+    h2 {
+	position: relative;
+	color: white;
+	background-color: $primary;
+	padding: 1rem;
+	margin: 0px;
+	font-size: 1.2rem;
+    }
+    
+    &__articles {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	overflow: scroll;
+
+	img {
+	    width: 12rem;
+	    height: auto;
+	    border-left: 2px solid $primary;
+
+	    &:hover {
+		@keyframes category-img-darken {
+		    from {
+			filter: brightness(100%);	
+		    }
+
+		    to {
+			filter: brightness(70%);
+		    }
+		}
+
+		animation-name: category-img-darken;
+		animation-duration: 0.40s;
+		filter: brightness(70%);
+	    }
+	}
+    }
+}
