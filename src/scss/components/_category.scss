@@ -1,14 +1,13 @@
 .category {
-    border: 2px solid $primary;
     margin-top: 2rem;
-
+    
     h2 {
 	position: relative;
 	color: white;
-	background-color: $primary;
 	padding: 1rem;
 	margin: 0px;
 	font-size: 1.2rem;
+	font-weight: 100;
     }
     
     &__articles {

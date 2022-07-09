@@ -4,11 +4,18 @@
     justify-content: flex-start;
     gap: 8rem;
     margin-top: 1rem;
-    background-color: invert($primary);
+    color: invert($primary);
+    background-color: lighten($primary, 10%);
+    background-image: linear-gradient(to right,
+				      transparentize($primary, 0.2),
+				      transparentize($primary, 0.7),
+				      transparentize($primary, 1)),
+		      url('https://via.placeholder.com/256');
     box-shadow: 0 0 16px black;
     border: 1px solid rgb(130, 130, 130);
     
     @include for-mobile {
+	background-image: none;
 	flex-direction: column;
 	gap: 2rem;
     }
@@ -28,7 +35,9 @@
 	    gap: 1rem;
 	}
 	
-	.button {	    
+	.button {
+	    max-width: 5em;
+	    
 	    @include for-mobile {
 		width: 50%;
 		text-align: center;
@@ -42,12 +51,19 @@
 
     &__description {
 	text-align: justify;
+	max-width: 24em;
+	padding: 1em;
+	
 	@include for-mobile {
 	    padding: 1rem;
 	}
     }
-    
-    &__image {		
-	margin-bottom: 2rem;
+
+    &__image {
+	display: none;
+
+	@include for-mobile {
+	    display: inline-block;	    
+	}
     }
 }

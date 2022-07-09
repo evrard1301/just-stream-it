@@ -6,22 +6,9 @@ nav {
 	flex-direction: column;
     }
     
-    background-color: $primary;
+    background-color: transparent;
     color: white;   
-    
-    h1 {
-	font-size: 1.5rem;
-	margin-left: 1rem;
 
-	@include for-mobile {
-	    width: 100%;
-	    padding: 1rem 0px 1rem 0px;	    
-	    margin: 0px;
-	    text-align: center;
-	    border-bottom: 1px solid rgb(64, 64, 64);
-	}
-    }
-    
     ul {
 	display: flex;
 	list-style: none;
@@ -41,22 +28,25 @@ nav {
 		text-align: center;
 		overflow: visible;
 	    }
-
-	    &:hover {
-		@keyframes nav-links {
-		    from { background-color: $primary; }
-		    to { background-color: $secondary; }
-		}
-		
-		background-color: $secondary;
-		animation-name: nav-links;
-		animation-duration: 0.3s;
-	    }
 	}
     }
     
     a {
 	color: white;
 	text-decoration: none;
-    }    
+    }
+
+    img {
+	position: relative;
+	top: 0.2em;
+	width: 10em;
+	height: 1em;
+	
+	@include for-mobile {
+	    padding: 1rem 0px 1rem 0px;	    
+	    margin: auto;
+	    text-align: center;
+	    border-bottom: 1px solid rgb(64, 64, 64);
+	}
+    }
 }
