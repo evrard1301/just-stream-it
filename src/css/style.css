@@ -7,7 +7,6 @@
 nav {
   display: flex;
   align-items: baseline;
-  background-color: transparent;
   color: white;
 }
 @media screen and (max-width: 599px) {
@@ -59,7 +58,7 @@ nav img {
 body {
   width: 90%;
   margin: auto;
-  background-color: #0c0c0c;
+  background-color: rgb(16, 16, 16);
 }
 
 .button {
@@ -146,7 +145,9 @@ body {
 }
 
 .category {
-  margin-top: 2rem;
+  width: 100%;
+  margin-top: 2em;
+  margin-bottom: 3em;
 }
 .category h2 {
   position: relative;
@@ -156,29 +157,37 @@ body {
   font-size: 1.2rem;
   font-weight: 100;
 }
-.category__articles {
+.category__content {
   display: flex;
-  justify-content: flex-start;
+  width: 100%;
+  height: 12em;
+}
+.category__content .arrow {
+  display: flex;
   align-items: center;
-  overflow: scroll;
+  justify-content: center;
+  width: 2em;
+  height: 12em;
+  background-color: rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 }
-.category__articles img {
-  width: 12rem;
-  height: auto;
-  border-left: 2px solid black;
+.category__content .arrow img {
+  width: auto;
+  height: 1em;
 }
-.category__articles img:hover {
-  animation-name: category-img-darken;
-  animation-duration: 0.4s;
-  filter: brightness(70%);
+.category__content .arrow--left img {
+  transform: scaleX(-1);
 }
-@keyframes category-img-darken {
-  from {
-    filter: brightness(100%);
-  }
-  to {
-    filter: brightness(70%);
-  }
+.category__content ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  width: 100%;
+  background-color: blue;
+}
+.category__content ul img {
+  border-right: 1px solid rgb(16, 16, 16);
+  height: 12em;
 }
 
 /*# sourceMappingURL=style.css.map */

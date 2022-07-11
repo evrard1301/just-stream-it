@@ -1,5 +1,8 @@
 .category {
-    margin-top: 2rem;
+    $category-height: 12em;
+    width: 100%;
+    margin-top: 2em;
+    margin-bottom: 3em;
     
     h2 {
 	position: relative;
@@ -9,32 +12,43 @@
 	font-size: 1.2rem;
 	font-weight: 100;
     }
-    
-    &__articles {
+
+    &__content {
 	display: flex;
-	justify-content: flex-start;
-	align-items: center;
-	overflow: scroll;
+	width: 100%;
+	height: $category-height;
 
-	img {
-	    width: 12rem;
-	    height: auto;
-	    border-left: 2px solid $primary;
+	.arrow {
+	    display: flex;
+	    align-items: center;
+	    justify-content: center;
+	    width: 2em;	    
+	    height: $category-height;	
+	    background-color: rgb(0, 0, 0, 0.1);
+	    cursor: pointer;
 
-	    &:hover {
-		@keyframes category-img-darken {
-		    from {
-			filter: brightness(100%);	
-		    }
-
-		    to {
-			filter: brightness(70%);
-		    }
+	    img {
+		width: auto;
+		height: 1em;
+	    }
+	    
+	    &--left {
+		img {
+		    transform: scaleX(-1);
 		}
+	    }
+	}
 
-		animation-name: category-img-darken;
-		animation-duration: 0.40s;
-		filter: brightness(70%);
+	ul {
+	    display: flex;
+	    flex-direction: row;
+	    list-style: none;
+	    width: 100%;
+	    background-color: blue;
+	    
+	    img {
+		border-right: 1px solid $background;
+		height: $category-height;
 	    }
 	}
     }
