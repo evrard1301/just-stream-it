@@ -17,7 +17,7 @@
 	display: flex;
 	width: 100%;
 	height: $category-height;
-
+	
 	.arrow {
 	    display: flex;
 	    align-items: center;
@@ -45,6 +45,11 @@
 	    list-style: none;
 	    width: 100%;
 	    background-color: blue;
+	    overflow: hidden;
+
+	    li {
+		position: relative;
+	    }
 	    
 	    img {
 		border-right: 1px solid $background;

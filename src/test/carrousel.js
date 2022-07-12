@@ -22,7 +22,7 @@ describe('carrousel', function() {
 	describe('at first position', function() {
 	    it('should not change the current position', function() {
 		assert.equal(0, my_carrousel.position);
-		my_carrousel.move_left();
+		my_carrousel.moveLeft();
 		assert.equal(0, my_carrousel.position);
 	    });
 	});
@@ -30,7 +30,7 @@ describe('carrousel', function() {
 	describe('at second position', function() {
 	    it('should change the current position', function() {
 		my_carrousel.position = 1;
-		my_carrousel.move_left();
+		my_carrousel.moveLeft();
 		assert.equal(0, my_carrousel.position);
 	    });
 	});
@@ -45,7 +45,7 @@ describe('carrousel', function() {
 	describe('at last position', function() {
 	    it('should not change the current position', function() {
 		my_carrousel.position = 2;
-		my_carrousel.move_right();
+		my_carrousel.moveRight();
 		assert.equal(2, my_carrousel.position);
 	    });
 	});
@@ -53,7 +53,7 @@ describe('carrousel', function() {
 	describe('at penultimate position', function() {
 	    it('should change the current position', function() {
 		my_carrousel.position = 1;
-		my_carrousel.move_right();
+		my_carrousel.moveRight();
 		assert.equal(2, my_carrousel.position);
 	    });
 	});
@@ -64,7 +64,7 @@ describe('carrousel', function() {
 	    let my_carrousel = new carrousel.Carrousel();
 	    
 	    it('should return an empty array', function() {
-		assert.equal(0, my_carrousel.request_view(2).movies.length);
+		assert.equal(0, my_carrousel.requestView(2).movies.length);
 	    });
 	});
 
@@ -74,7 +74,7 @@ describe('carrousel', function() {
 	    my_carrousel.add(new movie.Movie('Second Movie'));
 	    my_carrousel.add(new movie.Movie('Third Movie'));
 	    
-	    const currents = my_carrousel.request_view(4);
+	    const currents = my_carrousel.requestView(4);
 
 	    it('should return less movies than requested size', function() {
 		assert.equal(3, currents.movies.length);
@@ -93,7 +93,7 @@ describe('carrousel', function() {
 	    my_carrousel.add(new movie.Movie('Second Movie'));
 	    my_carrousel.add(new movie.Movie('Third Movie'));
 	    
-	    const currents = my_carrousel.request_view(2);
+	    const currents = my_carrousel.requestView(2);
 
 	    it('should contain the requested movies', function() {
 		assert.equal(2, currents.movies.length);
@@ -108,9 +108,9 @@ describe('carrousel', function() {
 	    my_carrousel.add(new movie.Movie('Second Movie'));
 	    my_carrousel.add(new movie.Movie('Third Movie'));
 
-	    my_carrousel.move_right();
+	    my_carrousel.moveRight();
 	    
-	    const currents = my_carrousel.request_view(2);
+	    const currents = my_carrousel.requestView(2);
 
 	    it('should contain the requested movies starting by the second one', function() {
 		assert.equal(2, currents.movies.length);
@@ -128,7 +128,7 @@ describe('carrousel', function() {
 	    my_carrousel.add(new movie.Movie('Second Movie'));
 	    my_carrousel.add(new movie.Movie('Third Movie'));
 
-	    const currents = my_carrousel.request_view(3);
+	    const currents = my_carrousel.requestView(3);
 	    
 	    it('should return null', function() {
 		assert.equal(null, currents.prev());
@@ -141,9 +141,9 @@ describe('carrousel', function() {
 	    my_carrousel.add(new movie.Movie('First Movie'));
 	    my_carrousel.add(new movie.Movie('Second Movie'));
 	    my_carrousel.add(new movie.Movie('Third Movie'));
-	    my_carrousel.move_right();
+	    my_carrousel.moveRight();
 
-	    const currents = my_carrousel.request_view(3);
+	    const currents = my_carrousel.requestView(3);
 	    
 	    it('should return the first movie', function() {
 		assert.equal('First Movie', currents.prev().title);
@@ -159,7 +159,7 @@ describe('carrousel', function() {
 	    my_carrousel.add(new movie.Movie('Second Movie'));
 	    my_carrousel.add(new movie.Movie('Third Movie'));
 
-	    const currents = my_carrousel.request_view(2);
+	    const currents = my_carrousel.requestView(2);
 	    
 	    it('should return the last', function() {
 		assert.equal('Third Movie', currents.next().title);
@@ -172,9 +172,9 @@ describe('carrousel', function() {
 	    my_carrousel.add(new movie.Movie('First Movie'));
 	    my_carrousel.add(new movie.Movie('Second Movie'));
 	    my_carrousel.add(new movie.Movie('Third Movie'));
-	    my_carrousel.move_right();
+	    my_carrousel.moveRight();
 
-	    const currents = my_carrousel.request_view(2);
+	    const currents = my_carrousel.requestView(2);
 	    
 	    it('should return null', function() {
 		assert.equal(null, currents.next());

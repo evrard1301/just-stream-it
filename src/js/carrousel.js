@@ -8,7 +8,7 @@
  * @class
  * Represents a subset of a Carrousel.
  * @see Carrousel
- **/    
+ **/
 class CarrouselView {
     /**
      * Create a view.
@@ -32,7 +32,7 @@ class CarrouselView {
     prev() {
 	return this._prev;
     }
-    
+
     /**
      * Get the movie following the last one if any.
      * @method
@@ -64,7 +64,7 @@ class Carrousel {
      * @return {number} The current position of the carrousel.
      **/
     get position() { return this._position; }
-    
+
     /**
      * Defines the current position of the carrousel.
      * @method
@@ -78,10 +78,10 @@ class Carrousel {
      * @param {number} count - The size of the requested view.
      * @return {CarrouselView} - The requested view.
      **/
-    request_view(count) {
+    requestView(count) {
 	let res = [];
 	const sz = Math.min(this._movies.length, this._position + count);
-	
+
 	for (let i=this._position; i<sz; i++) {
 	    res.push(this._movies[i]);
 	}
@@ -104,19 +104,19 @@ class Carrousel {
      * Move the carrousel to the left by changing its position.
      * @method
      **/
-    move_left() {
+    moveLeft() {
 	this._position -= 1;
 
 	if (this._position < 0) {
 	    this._position = 0;
-	}		
+	}
     }
 
     /**
      * Move the carrousel to the right by changing its position.
      * @method
      **/
-    move_right() {
+    moveRight() {
 	this._position += 1;
 
 	if (this._position >= this._movies.length) {
