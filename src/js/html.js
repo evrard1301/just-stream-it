@@ -183,27 +183,22 @@ function setElementPosition(element, x, y) {
  * @param {function} callback - The callback called.
  * @param {number} framerate - The framerate of the animation in seconds.
  **/
-function animationLoop(callback, framerate) {
-    let timer = 0.0;
-    let prev_time = null;
+function animationLoop(callback) {
+
+    let previous = null;
+    let elapsed = 0.0;
     
     function update(time) {
-	if (prev_time === null) { prev_time = time; }	
-	let elapsed = (time - prev_time)/1000.0;
-	prev_time = time;
+	if (previous === null) { previous = Date.now(); }
 	
-	if (timer >= framerate) {
-	    
-	    if (!callback(elapsed)) {
-		return;
-	    }
-	    
-	    timer = 0.0;
-	}
-	
-	timer += elapsed;
+	if (!callback(elapsed)) {
+	    return;
+	}		
 
 	requestAnimationFrame(update);
+	
+	elapsed = (Date.now() - previous)/1000.0;
+	previous = Date.now();	
     }
 
     requestAnimationFrame(update);
@@ -213,5 +208,5 @@ export default {
     CategoryHTMLBuilder: CategoryHTMLBuilder,
     moveElement: moveElement,
     setElementPosition: setElementPosition,
-    animationLoop: animationLoop
+    animationLoop: animationLoop,
 };

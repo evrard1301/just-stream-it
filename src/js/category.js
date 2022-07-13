@@ -31,11 +31,19 @@ class Category {
     addMovie(movie) {
 	this._movies.push(movie);
     }
-
+    
     onCarrouselLeft() {
+	let anim = new carrousel.CarrouselAnimation(this._carrousel,
+						    this._root_element);
+	this._carrousel.moveLeft();
+	anim.slide();
     }
 
     onCarrouselRight() {
+	let anim = new carrousel.CarrouselAnimation(this._carrousel,
+						    this._root_element);
+	this._carrousel.moveRight();
+	anim.slide();
     }
 }
 

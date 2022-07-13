@@ -1,3 +1,5 @@
+import html from './html.js';
+
 /**
  * Carrousel manipulation.
  * @module
@@ -142,7 +144,64 @@ class Carrousel {
     }
 }
 
+class CarrouselAnimation {
+    constructor(carrousel, root_element) {
+	this._carrousel = carrousel;
+	this._root = root_element;
+	this._list_element = this._root.children[1].children[1];
+	this._list = this._list_element.children;
+	this._image = this._list[0].children[0].children[0];
+	this._movie_width = this._image.scrollWidth;
+    }
+
+    slide(speed = 256) {
+	const position = this._carrousel.position;
+	const origin = this._list_element.getBoundingClientRect().x;
+	let target = this._list[position].getBoundingClientRect().x;
+	let final_offset = 0;
+	
+	if (target > origin) {
+	    html.animationLoop(function (dt) {
+		let incr = -speed * dt;
+		
+		for (let movie of this._list) {
+	    	    html.moveElement(movie, incr, 0);
+		}	    
+
+		target = this._list[position].getBoundingClientRect().x;
+		
+		return target > origin;
+		
+	    }.bind(this));
+	}
+
+	if (target < origin) {
+	    html.animationLoop(function (dt) {
+		let incr = speed * dt;
+		
+		for (let movie of this._list) {
+	    	    html.moveElement(movie, incr, 0);
+		}	    
+		
+		target = this._list[position].getBoundingClientRect().x;
+		
+		return target < origin;
+		
+	    }.bind(this));
+	}   
+    }
+    
+    slideRight() {
+    	this.slide(128);
+    }
+
+    slideLeft() {
+    	this.slide(128);
+    }
+}
+
 export default{
     CarrouselView: CarrouselView,
+    CarrouselAnimation: CarrouselAnimation,
     Carrousel: Carrousel
 };
