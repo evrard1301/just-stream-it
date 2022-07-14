@@ -6,11 +6,7 @@
     margin-top: 1rem;
     color: invert($primary);
     background-color: lighten($primary, 10%);
-    background-image: linear-gradient(to right,
-				      transparentize($primary, 0.2),
-				      transparentize($primary, 0.7),
-				      transparentize($primary, 1)),
-		      url('https://via.placeholder.com/256');
+    
     box-shadow: 0 0 16px black;
     border: 1px solid rgb(130, 130, 130);
     
@@ -63,6 +59,7 @@
 	display: none;
 
 	@include for-mobile {
+	    margin-top: 1em;
 	    display: inline-block;	    
 	}
     }

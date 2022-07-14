@@ -136,6 +136,30 @@ class CategoryHTMLBuilder {
     }
 }
 
+class BestMovieHTMLBuilder {
+    constructor(movie) {
+	this._movie = movie;
+    }
+
+    build() {
+	const url = this._movie.image_url;
+
+	const best_movie = document.querySelector('.best_movie');
+	
+	best_movie.style.backgroundImage = "url(" + url + "), linear-gradient(to right, black, transparent)";
+	
+	best_movie.style.backgroundRepeat = 'no-repeat';
+	best_movie.style.backgroundPosition = 'center';
+	
+	const img = document.querySelector('.best_movie__image img');
+	
+	img.setAttribute('src', url);
+	
+	const title = document.querySelector('.best_movie__title');
+	title.innerText = this._movie.title;
+    }
+}
+
 /**
  * Return the pixel number value given a string.
  * @function
@@ -207,6 +231,7 @@ function animationLoop(callback, next = function() {}) {
 
 export default {
     CategoryHTMLBuilder: CategoryHTMLBuilder,
+    BestMovieHTMLBuilder: BestMovieHTMLBuilder,
     moveElement: moveElement,
     setElementPosition: setElementPosition,
     animationLoop: animationLoop,
