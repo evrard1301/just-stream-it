@@ -82,10 +82,13 @@ class Carrousel {
      **/
     requestView(count) {
 	let res = [];
-	const sz = Math.min(this._movies.length, this._position + count);
 
-	for (let i=this._position; i<sz; i++) {
-	    res.push(this._movies[i]);
+	if (this._movies.length == 0) {
+	    return new CarrouselView([]);
+	}
+	
+	for (let i=0; i<count; i++) {
+	    res.push(this._movies[this._position + i % this._movies.length]);
 	}
 
 	let prev = null;
@@ -93,11 +96,11 @@ class Carrousel {
 
 	if (this._position > 0) {
 	    prev = this._movies[this._position - 1];
+	} else {
+	    prev = this._movies[this._movies.length - 1];
 	}
-
-	if (sz < this._movies.length) {
-	    next = this._movies[sz];
-	}
+	
+	next = this._movies[(this._position + count) % this._movies.length];
 
 	return new CarrouselView(res, prev, next);
     }
@@ -105,25 +108,29 @@ class Carrousel {
     /**
      * Move the carrousel to the left by changing its position.
      * @method
+     * @return {bool} - true if the movement is valid, false otherwise.
      **/
     moveLeft() {
-	this._position -= 1;
-
-	if (this._position < 0) {
-	    this._position = 0;
+	if (this._position - 1 >= 0) {
+	    this._position -= 1;
+	    return true;
 	}
+	
+	return false;
     }
 
     /**
      * Move the carrousel to the right by changing its position.
      * @method
+     * @return {bool} - true if the movement is valid, false otherwise.
      **/
     moveRight() {
-	this._position += 1;
-
-	if (this._position >= this._movies.length) {
-	    this._position = this._movies.length - 1;
+	if (this._position + 1 < this._movies.length) {
+	    this._position += 1;
+	    return true;
 	}
+
+	return false;
     }
 
     /**
@@ -144,59 +151,87 @@ class Carrousel {
     }
 }
 
+/**
+ * Manage the animation of the carrousel.
+ * @class
+ **/
 class CarrouselAnimation {
+
+    /**
+     * Create a new carrousel animation.     
+     * @constructor
+     * @param {Carrousel} carrousel - The carrousel to animate.
+     * @param {Element} - The root DOM element of the category.
+     **/
     constructor(carrousel, root_element) {
 	this._carrousel = carrousel;
-	this._root = root_element;
+	this._root = root_element;	
 	this._list_element = this._root.children[1].children[1];
 	this._list = this._list_element.children;
 	this._image = this._list[0].children[0].children[0];
-	this._movie_width = this._image.scrollWidth;
+	this._movie_width = this._list_element.offsetHeight;
     }
 
-    slide(speed = 256) {
-	const position = this._carrousel.position;
-	const origin = this._list_element.getBoundingClientRect().x;
-	let target = this._list[position].getBoundingClientRect().x;
-	let final_offset = 0;
+    /**
+     * Animate the carrousel by moving the movies within.    
+     * @method
+     * @param {number} speed - The speed of the animation in pixel per second.
+     * @param {number} count - The amount of carrousel images to slide.
+     **/
+    slide(speed=512, count=1) {
+	const reference = this._list[0];
+	let start = reference.offsetLeft;
 	
-	if (target > origin) {
-	    html.animationLoop(function (dt) {
-		let incr = -speed * dt;
-		
-		for (let movie of this._list) {
-	    	    html.moveElement(movie, incr, 0);
-		}	    
-
-		target = this._list[position].getBoundingClientRect().x;
-		
-		return target > origin;
-		
-	    }.bind(this));
-	}
-
-	if (target < origin) {
-	    html.animationLoop(function (dt) {
-		let incr = speed * dt;
-		
-		for (let movie of this._list) {
-	    	    html.moveElement(movie, incr, 0);
-		}	    
-		
-		target = this._list[position].getBoundingClientRect().x;
-		
-		return target < origin;
-		
-	    }.bind(this));
-	}   
+	html.animationLoop(function (dt) {
+	    for(let movie of this._list) {
+		html.moveElement(movie, speed * dt, 0);
+	    }
+	    
+	    return Math.abs(reference.offsetLeft - start) < this._movie_width * count;
+	}.bind(this));
     }
-    
+
+    /**
+     * Tells weither or not the carrousel can slide right.
+     * @method
+     * @return {boolean} True if the carrousel can slide right, false otherwise.
+     **/
+    canSlideRight() {
+	return this._list[this._list.length - 1].offsetLeft
+	    + this._list[this._list.length - 1].offsetWidth > this._list_element.offsetWidth;
+    }
+
+    /**
+     * Slide right the carrousel if allowed.
+     * @method
+     * @see canSlideRight
+     **/
     slideRight() {
-    	this.slide(128);
+
+	if (this.canSlideRight()) {	
+
+	    this.slide(-512);
+	}
     }
 
+    /**
+     * Tells weither or not the carrousel can slide left.
+     * @method
+     * @return {boolean} True if the carrousel can slide left, false otherwise.
+     **/
+    canSlideLeft() {
+	return this._list[0].offsetLeft < 0;
+    }
+
+    /**
+     * Slide left the carrousel if allowed.
+     * @method
+     * @see canSlideLeft
+     **/
     slideLeft() {
-    	this.slide(128);
+	if (this.canSlideLeft()) {
+	    this.slide(512);
+	}
     }
 }
 

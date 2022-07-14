@@ -181,9 +181,9 @@ function setElementPosition(element, x, y) {
  * Loop over a callback at a given framerate using requestAnimationFrame.
  * @function
  * @param {function} callback - The callback called.
- * @param {number} framerate - The framerate of the animation in seconds.
+ * @param {function} next - The callback called when the animation is stopped.
  **/
-function animationLoop(callback) {
+function animationLoop(callback, next = function() {}) {
 
     let previous = null;
     let elapsed = 0.0;
@@ -192,6 +192,7 @@ function animationLoop(callback) {
 	if (previous === null) { previous = Date.now(); }
 	
 	if (!callback(elapsed)) {
+	    next();
 	    return;
 	}		
 
