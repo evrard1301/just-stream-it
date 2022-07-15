@@ -17,7 +17,7 @@ class Movie {
     constructor(title, image_url='https://via.placeholder.com/256') {
 	this.title = title;
 	this.image_url = image_url;
-    }	
+    }
 }
 
 export default {
