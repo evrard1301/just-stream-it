@@ -3,6 +3,78 @@
  * @module
  **/
 
+class Modal {
+    constructor() {
+	const element = document.querySelector('.movie_info__header__close');
+	element.addEventListener('click', _ => {
+	    this.hide();
+	});
+
+	this._root = document.querySelector('.movie_info');
+	this._is_visible = false;
+    }
+
+    show(movie) {
+	if (this._is_visible === false) {
+	    this.update(movie);
+	    this._is_visible = true;
+	    this._root.style.display = 'inline-block';
+	}
+    }
+
+    hide() {
+	if (this._is_visible === true) {
+	    this._is_visible = false;
+	    this._root.style.display = 'none';
+	}
+    }
+
+    update(movie) {
+	const prefix = '#movie_info__content__';
+	
+	const elements = {
+	    'title': document.querySelector('.movie_info__header__title'),
+	    'img': document.querySelector('.movie_info__content img'),
+	    'genres': document.querySelector(prefix + 'genres ul'),
+	    'release': document.querySelector(prefix + 'release_date'),
+	    'rated': document.querySelector(prefix + 'rated'),
+	    'imdb': document.querySelector(prefix + 'imdb'),
+	    'directors': document.querySelector(prefix + 'directors ul'),
+	    'actors': document.querySelector(prefix + 'actors ul'),
+	    'duration': document.querySelector(prefix + 'duration'),
+	    'countries': document.querySelector(prefix + 'countries ul'),
+	    'box-office': document.querySelector(prefix + 'box_office'),
+	    'summary': document.querySelector(prefix + 'summary')
+	};
+	
+	console.log(prefix + 'release_date');
+	elements['title'].innerText = movie.title;
+	elements['img'].setAttribute('src', movie.image_url);
+	
+	this.buildList(elements['genres'], movie.genres);    
+	elements['release'].innerText = movie.release_date;
+	elements['rated'].innerText = movie.rated;
+	elements['imdb'].innerText = movie.imdb_score;
+	this.buildList(elements['directors'], movie.directors);
+	this.buildList(elements['actors'], movie.actors);
+	elements['duration'].innerText = movie.duration;
+	this.buildList(elements['countries'], movie.countries);
+	elements['box-office'].innerText = movie.box_office;
+	elements['summary'].innerText = movie.long_description;
+    }
+
+    buildList(element, values) {
+	for (const val of values) {
+	    const li = document.createElement('li');
+	    li.innerText = val;
+	    if (val !== values[values.length - 1]) {
+		li.innerText += ',';
+	    }
+	    element.appendChild(li);
+	}
+    }
+}
+
 /**
  * Build the HTML representation of a category.
  * @class
@@ -24,6 +96,7 @@ class CategoryHTMLBuilder {
 	this._movies = [];
 	this._left_callback = left_callback
 	this._right_callback = right_callback;
+	this._modal = null;
     }
 
     /**
@@ -35,6 +108,10 @@ class CategoryHTMLBuilder {
 	this._movies.push(movie);
     }
 
+    bindModal(modal) {
+	this._modal = modal;
+    }
+    
     /**
      * Build the DOM elements of the category.
      * @method
@@ -124,8 +201,15 @@ class CategoryHTMLBuilder {
 	let li = document.createElement('li');
 
 	let link = document.createElement('a');
-	link.setAttribute('href', '#');
-
+	link.setAttribute('href', '');
+	
+	link.addEventListener('click', event => {
+	    event.preventDefault();
+	    if (this._modal !== null) {
+		this._modal.show(movie);
+	    }
+	});
+	
 	let img = document.createElement('img');
 	img.setAttribute('src', movie.image_url);
 
@@ -145,6 +229,8 @@ class BestMovieHTMLBuilder {
 	const url = this._movie.image_url;
 
 	const best_movie = document.querySelector('.best_movie');
+	const best_movie_description = document.querySelector('.best_movie__description');
+	best_movie_description.innerText = this._movie.long_description;
 	
 	best_movie.style.backgroundImage = "url(" + url + "), linear-gradient(to right, black, transparent)";
 	
@@ -159,6 +245,7 @@ class BestMovieHTMLBuilder {
 	title.innerText = this._movie.title;
     }
 }
+
 
 /**
  * Return the pixel number value given a string.
@@ -229,10 +316,12 @@ function animationLoop(callback, next = function() {}) {
     requestAnimationFrame(update);
 }
 
+
 export default {
     CategoryHTMLBuilder: CategoryHTMLBuilder,
     BestMovieHTMLBuilder: BestMovieHTMLBuilder,
+    Modal: Modal,
     moveElement: moveElement,
     setElementPosition: setElementPosition,
-    animationLoop: animationLoop,
+    animationLoop: animationLoop
 };

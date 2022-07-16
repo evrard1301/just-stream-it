@@ -16,6 +16,7 @@ class App {
     constructor() {
 	this._best_movie = null
 	this._categories = [];
+	this._modal = new html.Modal();
     }
 
     async init() {
@@ -63,7 +64,7 @@ class App {
      **/
     start() {
 	for (let cat of this._categories) {
-	    cat.init();
+	    cat.init(this._modal);
 	}
     }
 }

@@ -23,12 +23,16 @@ class Category {
      * Initialize the category by generating the corresponding HTML.
      * @method
      **/
-    init() {
+    init(modal = null) {
 	let category_builder =
 	    new html.CategoryHTMLBuilder(this._name,
 					 this.onCarrouselLeft.bind(this),
 					 this.onCarrouselRight.bind(this));
 
+	if (modal !== null) {
+	    category_builder.bindModal(modal);
+	}
+	
 	for (let movie of this._movies) {
 	    category_builder.addMovie(movie);
 	    this._carrousel.add(movie);
