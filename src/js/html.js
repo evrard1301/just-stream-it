@@ -3,7 +3,15 @@
  * @module
  **/
 
+/**
+ * Manipulate the DOM of the movie modal.
+ * @class
+ **/
 class Modal {
+    /**
+     * Hide the modal by default and bind close button click event.
+     * @constructor
+     **/
     constructor() {
 	const element = document.querySelector('.movie_info__header__close');
 	element.addEventListener('click', _ => {
@@ -14,6 +22,11 @@ class Modal {
 	this._is_visible = false;
     }
 
+    /**
+     * Shows the modal for a given movie.
+     * @method
+     * @param {Movie} movie - The movie to show in the modal.
+     **/
     show(movie) {
 	if (this._is_visible === false) {
 	    this.update(movie);
@@ -22,6 +35,10 @@ class Modal {
 	}
     }
 
+    /**
+     * Hide the modal.
+     * @method
+     **/
     hide() {
 	if (this._is_visible === true) {
 	    this._is_visible = false;
@@ -29,6 +46,13 @@ class Modal {
 	}
     }
 
+    /**
+     * Update the modal DOM to display the informations of 
+     * a given movie.
+     * @method
+     * @param {Movie} movie - The movie from where to extract the modal
+     * informations.
+     **/
     update(movie) {
 	const prefix = '#movie_info__content__';
 	
@@ -63,6 +87,12 @@ class Modal {
 	elements['summary'].innerText = movie.long_description;
     }
 
+    /**
+     * Build HTML list items under an unordered list.
+     * @method
+     * @param {Element} element - The DOM unordered list element.
+     * @param {array} values - The inner texts of the list items.
+     **/
     buildList(element, values) {
 	for (const val of values) {
 	    const li = document.createElement('li');
@@ -108,6 +138,12 @@ class CategoryHTMLBuilder {
 	this._movies.push(movie);
     }
 
+    /**
+     * Bind a modal to the category which will be built.
+     * @method
+     * @param {Modal} modal - The modal that must be used during the
+     * HTML generation of the category.
+     **/
     bindModal(modal) {
 	this._modal = modal;
     }
@@ -220,11 +256,24 @@ class CategoryHTMLBuilder {
     }
 }
 
+/**
+ * Manipulate the best movie panel DOM elements.
+ * @class
+ **/
 class BestMovieHTMLBuilder {
+    /**
+     * @constructor
+     * @param {Movie} movie - The movie rendered inside the best movie
+     * panel.
+     **/
     constructor(movie) {
 	this._movie = movie;
     }
 
+    /**
+     * Manipulate the best movie panel DOM elements.
+     * @method
+     **/
     build() {
 	const url = this._movie.image_url;
 

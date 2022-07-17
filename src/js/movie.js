@@ -13,6 +13,17 @@ class Movie {
      * @constructor
      * @param {string} title - The title of the movie.
      * @param {string} image_url - The URL of the movie image.
+     * @param {array} genres - The genre.
+     * @param {string} release_date - The release date.
+     * @param {string} rated - The rated value.
+     * @param {number} imdb_score - The IMDB score.
+     * @param {array} directors - All the directors of the movie.
+     * @param {array} actors - All the actors of the movie.
+     * @param {string} duration - The duration of the movie in minutes.
+     * @param {array} countries - The countries where the movie is available.
+     * @param {string} box_office - The box office.
+     * @param {string} description - The short description of a movie.
+     * @param {string} long description - The long description of a movie.     
      **/
     constructor(title,
 		image_url='https://via.placeholder.com/256',

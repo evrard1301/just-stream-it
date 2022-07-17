@@ -19,13 +19,24 @@ class App {
 	this._modal = new html.Modal();
     }
 
+    /**
+     * Intialize the app.
+     * @method
+     **/
     async init() {
 	await Promise.all([
 	    this.initBestMovie(),
 	    this.initAllCategories()
 	]);
     }
-    
+
+    /**
+     * Initialize a category by creating the HTML 
+     * and binding events.
+     * @method
+     * @param {string} name - The name of the category.
+     * @param {string} genre - The API genre name where to find movies for this category.
+     **/
     async initCategory(name, genre) {
 	let cat = new category.Category(name)
 
@@ -39,6 +50,10 @@ class App {
 	this._categories.push(cat);	
     }
 
+    /**
+     * Initliaze three arbitrary categories.
+     * @method
+     **/
     async initAllCategories() {
 	await Promise.all([	   
 	    this.initCategory('Biographies', 'Biography'),
@@ -47,13 +62,23 @@ class App {
 	]);
     }
 
+    /**
+     * Initialize the best movie panel by
+     * modifying the DOM.
+     * @method
+     **/
     async initBestMovie() {
 	const fetcher = new api.MovieFetcher();
 	const movie = await fetcher.findBestMovie();
 	const builder = new html.BestMovieHTMLBuilder(movie);
 	builder.build();
     }
-    
+
+    /**
+     * Add a new category to the app.
+     * @method
+     * @param {Category} cat - The category to add.
+     **/
     addCategory(cat) {
 	this._categories.push(cat);
     }
