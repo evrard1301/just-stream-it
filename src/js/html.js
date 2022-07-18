@@ -76,12 +76,32 @@ class Modal {
 	elements['img'].setAttribute('src', movie.image_url);
 	
 	this.buildList(elements['genres'], movie.genres);    
-	elements['release'].innerText = movie.release_date;
+	elements['release'].innerText = movie.release_date.toDateString();
 	elements['rated'].innerText = movie.rated;
 	elements['imdb'].innerText = movie.imdb_score;
 	this.buildList(elements['directors'], movie.directors);
 	this.buildList(elements['actors'], movie.actors);
-	elements['duration'].innerText = movie.duration;
+
+
+	{
+	    const hours = Math.floor(movie.duration/60);
+	    const mins = movie.duration % 60;
+	    let value;
+
+	    if (movie.duration < 60) {
+		value = `${movie.duration} min`;
+	    } else {
+		value = `${hours}h${mins}`;
+
+		if (hours < 10) {
+		    value = '0' + value;
+		}
+	    }
+	    
+	    elements['duration'].innerText = value;
+	}
+
+	
 	this.buildList(elements['countries'], movie.countries);
 	elements['box-office'].innerText = movie.box_office;
 	elements['summary'].innerText = movie.long_description;
@@ -271,6 +291,16 @@ class BestMovieHTMLBuilder {
     }
 
     /**
+     * Bind a modal to the best movie panel.
+     * @method
+     * @param {Modal} modal - The modal that must be used during the
+     * HTML generation of the best movie image.
+     **/
+    bindModal(modal) {
+	this._modal = modal;
+    }
+    
+    /**
      * Manipulate the best movie panel DOM elements.
      * @method
      **/
@@ -281,12 +311,20 @@ class BestMovieHTMLBuilder {
 	const best_movie_description = document.querySelector('.best_movie__description');
 	best_movie_description.innerText = this._movie.long_description;
 	
-	best_movie.style.backgroundImage = "url(" + url + "), linear-gradient(to right, black, transparent)";
-	
+	best_movie.style.backgroundImage = "url(" + url + "), linear-gradient(to right, black, transparent)";	
 	best_movie.style.backgroundRepeat = 'no-repeat';
 	best_movie.style.backgroundPosition = 'center';
-	
+
+	const img_link = document.querySelector('.best_movie__image');
 	const img = document.querySelector('.best_movie__image img');
+
+	if (this._modal !== null) {
+	    best_movie.style.cursor = 'pointer';
+	    
+	    best_movie.addEventListener('click', _ => {
+		this._modal.show(this._movie);
+	    });
+	}
 	
 	img.setAttribute('src', url);
 	

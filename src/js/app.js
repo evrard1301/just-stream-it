@@ -57,7 +57,7 @@ class App {
     async initAllCategories() {
 	await Promise.all([	   
 	    this.initCategory('Biographies', 'Biography'),
-	    this.initCategory('Western', 'Western'),
+	    this.initCategory('Film-Noir', 'Film-Noir'),
 	    this.initCategory('Historique', 'History')
 	]);
     }
@@ -71,6 +71,7 @@ class App {
 	const fetcher = new api.MovieFetcher();
 	const movie = await fetcher.findBestMovie();
 	const builder = new html.BestMovieHTMLBuilder(movie);
+	builder.bindModal(this._modal);
 	builder.build();
     }
 

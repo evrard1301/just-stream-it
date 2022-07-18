@@ -14,7 +14,7 @@ class Movie {
      * @param {string} title - The title of the movie.
      * @param {string} image_url - The URL of the movie image.
      * @param {array} genres - The genre.
-     * @param {string} release_date - The release date.
+     * @param {Date} release_date - The release date.
      * @param {string} rated - The rated value.
      * @param {number} imdb_score - The IMDB score.
      * @param {array} directors - All the directors of the movie.

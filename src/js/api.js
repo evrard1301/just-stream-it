@@ -78,7 +78,7 @@ class MovieFetcher {
 	return new movie.Movie(json_movie.title,
 			       new URL(json_movie.image_url),
 			       json_movie.genres,
-			       json_movie.date_published,
+			       new Date(json_movie.date_published),
 			       json_movie.rated,
 			       json_movie.imdb_score,
 			       json_movie.directors,
