@@ -55,3 +55,31 @@ $ pipenv run python manage.py runserver
 ```
 
 For more informations see the [github API documentation](https://github.com/OpenClassrooms-Student-Center/OCMovies-API-EN-FR/blob/master/README.md).
+
+## Run just-stream-it
+First you need to start the API. For that you can use the script
+``scripts/run_api.sh``.
+
+```
+scripts/run_api.sh
+```
+
+Next, you can run the website front-end using npm **from the src directory**.
+```
+npm run dev
+```
+
+Then open your favorite browser at location ``localhost:8080``.
+
+## Run tools (test and linter)
+
+To run the test suite or the linter you can use the followings
+commands **from the src directory**.
+
+```
+# To run the test suite
+npm run test
+
+# To run the linter
+npm run lint
+```

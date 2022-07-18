@@ -1,5 +1,4 @@
 import '../scss/style.scss';
-import movie from './movie.js';
 import category from './category.js';
 import api from './api.js';
 import html from './html.js';
@@ -97,6 +96,6 @@ class App {
 
 const app = new App();
 
-app.init().then(function(cat) {
+app.init().then(function() {
     app.start();
 });

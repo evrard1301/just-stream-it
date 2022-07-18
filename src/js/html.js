@@ -14,7 +14,7 @@ class Modal {
      **/
     constructor() {
 	const element = document.querySelector('.movie_info__header__close');
-	element.addEventListener('click', _ => {
+	element.addEventListener('click', () => {
 	    this.hide();
 	});
 
@@ -310,18 +310,19 @@ class BestMovieHTMLBuilder {
 	const best_movie = document.querySelector('.best_movie');
 	const best_movie_description = document.querySelector('.best_movie__description');
 	best_movie_description.innerText = this._movie.long_description;
+
+	if (getComputedStyle(document.querySelector('.best_movie__image')).display === 'none') {
+	    best_movie.style.backgroundImage = "url(" + url + "), linear-gradient(to right, black, transparent)";	
+	    best_movie.style.backgroundRepeat = 'no-repeat';
+	    best_movie.style.backgroundPosition = 'center';
+	}
+
+	const img = document.querySelector('.best_movie__image img');	
 	
-	best_movie.style.backgroundImage = "url(" + url + "), linear-gradient(to right, black, transparent)";	
-	best_movie.style.backgroundRepeat = 'no-repeat';
-	best_movie.style.backgroundPosition = 'center';
-
-	const img_link = document.querySelector('.best_movie__image');
-	const img = document.querySelector('.best_movie__image img');
-
 	if (this._modal !== null) {
 	    best_movie.style.cursor = 'pointer';
 	    
-	    best_movie.addEventListener('click', _ => {
+	    best_movie.addEventListener('click', () => {
 		this._modal.show(this._movie);
 	    });
 	}
@@ -386,7 +387,7 @@ function animationLoop(callback, next = function() {}) {
     let previous = null;
     let elapsed = 0.0;
     
-    function update(time) {
+    function update() {
 	if (previous === null) { previous = Date.now(); }
 	
 	if (!callback(elapsed)) {
