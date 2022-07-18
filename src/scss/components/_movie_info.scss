@@ -1,7 +1,7 @@
 .movie_info {
     $width: 50%;
     $min-width: 500px;
-    $height: 30%;
+    $height: 75%;
     $header-height: 2em;
     $shadow-border: 0.1em;
     $shadow-color: rgba(255, 250, 250, 0.2);
@@ -12,11 +12,13 @@
     position: fixed;
     width: $width;
     min-width: $min-width;
-
+    max-height: $height;
+    overflow-y: scroll;
+	
     top: 0;
     left: 0;
     margin-left: calc((100% - $width) / 2);
-    margin-top: 1em;
+    margin-top: calc((100% - $height)/4);
     background-color: $background;
     color: white;
     
@@ -27,11 +29,14 @@
 
     
     @include for-mobile {
-	position: absolute;
+	position: fixed;
+	margin: 0;
 	top: 0;
 	left: 0;
 	width: 100%;
 	min-width: 0;
+	height: 100%;
+	max-height: 100%;
     }
 
     &__header {
@@ -65,11 +70,11 @@
 	align-items: center;
 	gap: 1em;
 	height: 100%;
-
+	
 	@include for-mobile {
 	    flex-direction: column;
 	}
-	
+
 	img {
 	    width: 25%;
 	    height: 25%;
@@ -102,7 +107,7 @@
 		}
 	    }
 	    
-	    td {
+	    td {		
 		ul {
 		    display: flex;
 		    flex-wrap: wrap;		    
@@ -112,7 +117,7 @@
 			margin-right: 0.5em;
 		    }
 		}
-	    }	    
+	    }
 	}
     }
 }
