@@ -1,0 +1,12 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{+w}{    }\PYG{k}{@include}\PYG{+w}{ }\PYG{n+nd}{for\PYGZhy{}mobile}\PYG{+w}{ }\PYG{err}{\PYGZob{}}
+\PYG{+w}{        }\PYG{n+na}{position}\PYG{o}{:}\PYG{+w}{ }\PYG{n+no}{fixed}\PYG{err}{;}
+\PYG{+w}{        }\PYG{n+na}{margin}\PYG{o}{:}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{err}{;}
+\PYG{+w}{        }\PYG{n+na}{top}\PYG{o}{:}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{err}{;}
+\PYG{+w}{        }\PYG{n+na}{left}\PYG{o}{:}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{err}{;}
+\PYG{+w}{        }\PYG{n+na}{width}\PYG{o}{:}\PYG{+w}{ }\PYG{l+m+mi}{100}\PYG{k+kt}{\PYGZpc{}}\PYG{err}{;}
+\PYG{+w}{        }\PYG{n+na}{min\PYGZhy{}width}\PYG{o}{:}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{err}{;}
+\PYG{+w}{        }\PYG{n+na}{height}\PYG{o}{:}\PYG{+w}{ }\PYG{l+m+mi}{100}\PYG{k+kt}{\PYGZpc{}}\PYG{err}{;}
+\PYG{+w}{        }\PYG{n+na}{max\PYGZhy{}height}\PYG{o}{:}\PYG{+w}{ }\PYG{l+m+mi}{100}\PYG{k+kt}{\PYGZpc{}}\PYG{err}{;}
+\PYG{+w}{    }\PYG{err}{\PYGZcb{}}
+\end{Verbatim}

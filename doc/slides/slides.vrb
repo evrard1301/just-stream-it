@@ -1,0 +1,20 @@
+\frametitle{Le BEM appliqué au SASS}
+\begin{block}{En SASS}
+    \scriptsize
+    \begin{minted}{sass}
+      .best_movie {
+        &__title {
+          &--blue {}
+        }
+      }
+    \end{minted}
+  \end{block}
+
+  \begin{block}{En CSS}
+    \scriptsize
+    \begin{minted}{sass}
+      .best_movie {}
+      .best_movie best_movie__title {}
+      .best_movie best_movie__title best_movie__title--blue {}
+    \end{minted}
+  \end{block}

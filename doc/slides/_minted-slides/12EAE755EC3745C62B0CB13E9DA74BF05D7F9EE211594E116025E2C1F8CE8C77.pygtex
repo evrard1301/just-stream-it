@@ -1,0 +1,10 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{+w}{    }\PYG{n+nc}{.button}\PYG{+w}{ }\PYG{err}{\PYGZob{}}
+\PYG{+w}{            }\PYG{n+na}{max\PYGZhy{}width}\PYG{o}{:}\PYG{+w}{ }\PYG{l+m+mi}{5}\PYG{k+kt}{em}\PYG{err}{;}
+
+\PYG{+w}{            }\PYG{k}{@include}\PYG{+w}{ }\PYG{n+nd}{for\PYGZhy{}mobile}\PYG{+w}{ }\PYG{err}{\PYGZob{}}
+\PYG{+w}{                }\PYG{n+na}{width}\PYG{o}{:}\PYG{+w}{ }\PYG{l+m+mi}{50}\PYG{k+kt}{\PYGZpc{}}\PYG{err}{;}
+\PYG{+w}{                }\PYG{n+na}{text\PYGZhy{}align}\PYG{o}{:}\PYG{+w}{ }\PYG{n+no}{center}\PYG{err}{;}
+\PYG{+w}{            }\PYG{err}{\PYGZcb{}}
+\PYG{+w}{        }\PYG{err}{\PYGZcb{}}
+\end{Verbatim}

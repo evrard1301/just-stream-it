@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{+w}{    }\PYG{k}{@mixin}\PYG{+w}{ }\PYG{n+nf}{for\PYGZhy{}mobile}\PYG{+w}{ }\PYG{err}{\PYGZob{}}
+\PYG{+w}{      }\PYG{k}{@media}\PYG{+w}{ }\PYG{n+nt}{screen}\PYG{+w}{ }\PYG{n+nt}{and}\PYG{+w}{ }\PYG{o}{(}\PYG{n+nt}{max\PYGZhy{}width}\PYG{n+nd}{:}\PYG{+w}{ }\PYG{n+nt}{599px}\PYG{o}{)}\PYG{+w}{ }\PYG{err}{\PYGZob{}}
+\PYG{+w}{        }\PYG{k}{@content}
+\PYG{+w}{      }\PYG{err}{\PYGZcb{}}
+\PYG{+w}{    }\PYG{err}{\PYGZcb{}}
+\end{Verbatim}
