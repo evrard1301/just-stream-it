@@ -1,20 +1,17 @@
-\frametitle{Le BEM appliqué au SASS}
-\begin{block}{En SASS}
-    \scriptsize
-    \begin{minted}{sass}
-      .best_movie {
-        &__title {
-          &--blue {}
-        }
-      }
-    \end{minted}
-  \end{block}
+\frametitle{Mise à jour de la modale}
+\begin{block}{Modification du HTML (extrait)}
+    \tiny
+    \begin{minted}{javascript}
+      elements['title'].innerText = movie.title;
+      elements['img'].setAttribute('src', movie.image_url);
 
-  \begin{block}{En CSS}
-    \scriptsize
-    \begin{minted}{sass}
-      .best_movie {}
-      .best_movie best_movie__title {}
-      .best_movie best_movie__title best_movie__title--blue {}
+      this.buildList(elements['genres'], movie.genres);
+      elements['release'].innerText = movie.release_date.toDateString();
+      elements['rated'].innerText = movie.rated;
+      elements['imdb'].innerText = movie.imdb_score;
+      this.buildList(elements['directors'], movie.directors);
+      this.buildList(elements['actors'], movie.actors);
+
+      // ...
     \end{minted}
   \end{block}

@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PYG{n+nx}{async} \PYG{n+nx}{initAllCategories}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+      \PYG{n+nx}{await} \PYG{n+nb}{Promise}\PYG{p}{.}\PYG{n+nx}{all}\PYG{p}{([}	
+	\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{initCategory}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Biographies\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}Biography\PYGZsq{}}\PYG{p}{),}
+	\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{initCategory}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Film\PYGZhy{}Noir\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}Film\PYGZhy{}Noir\PYGZsq{}}\PYG{p}{),}
+	\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{initCategory}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Historique\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}History\PYGZsq{}}\PYG{p}{)}
+      \PYG{p}{]);}
+    \PYG{p}{\PYGZcb{}}
+\end{Verbatim}

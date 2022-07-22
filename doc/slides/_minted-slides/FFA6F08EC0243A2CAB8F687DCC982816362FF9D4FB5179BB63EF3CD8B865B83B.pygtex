@@ -1,0 +1,10 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+      \PYG{k+kr}{export} \PYG{k}{default} \PYG{p}{\PYGZob{}}
+        \PYG{n+nx}{CategoryHTMLBuilder}\PYG{o}{:} \PYG{n+nx}{CategoryHTMLBuilder}\PYG{p}{,}
+        \PYG{n+nx}{BestMovieHTMLBuilder}\PYG{o}{:} \PYG{n+nx}{BestMovieHTMLBuilder}\PYG{p}{,}
+        \PYG{n+nx}{Modal}\PYG{o}{:} \PYG{n+nx}{Modal}\PYG{p}{,}
+        \PYG{n+nx}{moveElement}\PYG{o}{:} \PYG{n+nx}{moveElement}\PYG{p}{,}
+        \PYG{n+nx}{setElementPosition}\PYG{o}{:} \PYG{n+nx}{setElementPosition}\PYG{p}{,}
+        \PYG{n+nx}{animationLoop}\PYG{o}{:} \PYG{n+nx}{animationLoop}
+      \PYG{p}{\PYGZcb{};}
+\end{Verbatim}

@@ -1,0 +1,12 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+    \PYG{k}{@include}\PYG{n+nd}{ for\PYGZhy{}mobile} \PYG{err}{\PYGZob{}}
+      \PYG{n+na}{position}\PYG{o}{:} \PYG{n+no}{fixed}\PYG{err}{;}
+      \PYG{n+na}{margin}\PYG{o}{:} \PYG{l+m+mi}{0}\PYG{err}{;}
+      \PYG{n+na}{top}\PYG{o}{:} \PYG{l+m+mi}{0}\PYG{err}{;}
+      \PYG{n+na}{left}\PYG{o}{:} \PYG{l+m+mi}{0}\PYG{err}{;}
+      \PYG{n+na}{width}\PYG{o}{:} \PYG{l+m+mi}{100}\PYG{k+kt}{\PYGZpc{}}\PYG{err}{;}
+      \PYG{n+na}{min\PYGZhy{}width}\PYG{o}{:} \PYG{l+m+mi}{0}\PYG{err}{;}
+      \PYG{n+na}{height}\PYG{o}{:} \PYG{l+m+mi}{100}\PYG{k+kt}{\PYGZpc{}}\PYG{err}{;}
+      \PYG{n+na}{max\PYGZhy{}height}\PYG{o}{:} \PYG{l+m+mi}{100}\PYG{k+kt}{\PYGZpc{}}\PYG{err}{;}
+    \PYG{err}{\PYGZcb{}}
+\end{Verbatim}

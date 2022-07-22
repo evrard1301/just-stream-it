@@ -1,0 +1,11 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+      \PYG{n+nx}{buildSection}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+	\PYG{k+kd}{let} \PYG{n+nx}{section} \PYG{o}{=} \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{createElement}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}section\PYGZsq{}}\PYG{p}{);}
+	\PYG{n+nx}{section}\PYG{p}{.}\PYG{n+nx}{classList}\PYG{p}{.}\PYG{n+nx}{add}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}category\PYGZsq{}}\PYG{p}{);}	
+	\PYG{k+kd}{let} \PYG{n+nx}{h2} \PYG{o}{=} \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{createElement}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}h2\PYGZsq{}}\PYG{p}{);}
+	\PYG{n+nx}{h2}\PYG{p}{.}\PYG{n+nx}{innerText} \PYG{o}{=} \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{\PYGZus{}title}\PYG{p}{;}
+	\PYG{n+nx}{section}\PYG{p}{.}\PYG{n+nx}{appendChild}\PYG{p}{(}\PYG{n+nx}{h2}\PYG{p}{);}
+	\PYG{n+nx}{section}\PYG{p}{.}\PYG{n+nx}{appendChild}\PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{buildCategoryContent}\PYG{p}{());}	
+	\PYG{k}{return} \PYG{n+nx}{section}\PYG{p}{;}
+      \PYG{p}{\PYGZcb{}}
+\end{Verbatim}

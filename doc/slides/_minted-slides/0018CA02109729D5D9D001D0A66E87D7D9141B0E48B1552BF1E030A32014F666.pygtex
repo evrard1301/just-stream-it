@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+      \PYG{n+nc}{.best\PYGZus{}movie} \PYG{err}{\PYGZob{}\PYGZcb{}}
+      \PYG{n+nc}{.best\PYGZus{}movie} \PYG{n+nt}{best\PYGZus{}movie\PYGZus{}\PYGZus{}title} \PYG{err}{\PYGZob{}\PYGZcb{}}
+      \PYG{n+nc}{.best\PYGZus{}movie} \PYG{n+nt}{best\PYGZus{}movie\PYGZus{}\PYGZus{}title} \PYG{n+nt}{best\PYGZus{}movie\PYGZus{}\PYGZus{}title\PYGZhy{}\PYGZhy{}blue} \PYG{err}{\PYGZob{}\PYGZcb{}}
+\end{Verbatim}

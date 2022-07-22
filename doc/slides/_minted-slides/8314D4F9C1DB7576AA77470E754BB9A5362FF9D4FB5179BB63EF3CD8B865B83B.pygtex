@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+      \PYG{n+nx}{build}\PYG{p}{(}\PYG{n+nx}{root\PYGZus{}id}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+	\PYG{k+kd}{let} \PYG{n+nx}{root} \PYG{o}{=} \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{getElementById}\PYG{p}{(}\PYG{n+nx}{root\PYGZus{}id}\PYG{p}{);}
+	\PYG{k+kd}{let} \PYG{n+nx}{section} \PYG{o}{=} \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{buildSection}\PYG{p}{();}
+	\PYG{n+nx}{root}\PYG{p}{.}\PYG{n+nx}{appendChild}\PYG{p}{(}\PYG{n+nx}{section}\PYG{p}{);}
+
+	\PYG{k}{return} \PYG{n+nx}{section}\PYG{p}{;}
+      \PYG{p}{\PYGZcb{}}
+\end{Verbatim}

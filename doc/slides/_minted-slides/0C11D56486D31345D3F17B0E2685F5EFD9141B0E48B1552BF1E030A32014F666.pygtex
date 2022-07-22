@@ -1,0 +1,10 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PYG{k}{@import} \PYG{l+s}{\PYGZsq{}base/reset\PYGZsq{};}
+    \PYG{k}{@import} \PYG{l+s}{\PYGZsq{}abstracts/mobile\PYGZsq{};}
+    \PYG{k}{@import} \PYG{l+s}{\PYGZsq{}themes/theme\PYGZsq{};}
+    \PYG{k}{@import} \PYG{l+s}{\PYGZsq{}layout/nav\PYGZsq{};}
+    \PYG{k}{@import} \PYG{l+s}{\PYGZsq{}pages/home\PYGZsq{};}
+    \PYG{k}{@import} \PYG{l+s}{\PYGZsq{}components/buttons\PYGZsq{};}
+    \PYG{k}{@import} \PYG{l+s}{\PYGZsq{}components/best\PYGZus{}movie\PYGZsq{};}                                                                                                                 \PYG{l+s}{@import} \PYG{l+s}{\PYGZsq{}components/category\PYGZsq{};}
+    \PYG{k}{@import} \PYG{l+s}{\PYGZsq{}components/movie\PYGZus{}info\PYGZsq{};}
+\end{Verbatim}

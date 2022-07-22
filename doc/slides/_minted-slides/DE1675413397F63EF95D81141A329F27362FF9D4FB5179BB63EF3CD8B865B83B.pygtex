@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+      \PYG{n+nx}{constructor}\PYG{p}{(}\PYG{n+nx}{name}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+	\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{\PYGZus{}name} \PYG{o}{=} \PYG{n+nx}{name}\PYG{p}{;}
+	\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{\PYGZus{}movies} \PYG{o}{=} \PYG{p}{[];}
+	\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{\PYGZus{}carrousel} \PYG{o}{=} \PYG{k}{new} \PYG{n+nx}{carrousel}\PYG{p}{.}\PYG{n+nx}{Carrousel}\PYG{p}{();}
+	\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{\PYGZus{}root\PYGZus{}element} \PYG{o}{=} \PYG{k+kc}{null}\PYG{p}{;}
+      \PYG{p}{\PYGZcb{}}
+\end{Verbatim}

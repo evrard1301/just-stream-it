@@ -1,0 +1,14 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PYG{n+nx}{async} \PYG{n+nx}{initCategory}\PYG{p}{(}\PYG{n+nx}{name}\PYG{p}{,} \PYG{n+nx}{genre}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+      \PYG{k+kd}{let} \PYG{n+nx}{cat} \PYG{o}{=} \PYG{k}{new} \PYG{n+nx}{category}\PYG{p}{.}\PYG{n+nx}{Category}\PYG{p}{(}\PYG{n+nx}{name}\PYG{p}{)}
+
+      \PYG{k+kr}{const} \PYG{n+nx}{fetcher} \PYG{o}{=} \PYG{k}{new} \PYG{n+nx}{api}\PYG{p}{.}\PYG{n+nx}{MovieFetcher}\PYG{p}{();}
+      \PYG{k+kr}{const} \PYG{n+nx}{movies} \PYG{o}{=} \PYG{n+nx}{await} \PYG{n+nx}{fetcher}\PYG{p}{.}\PYG{n+nx}{findByGenre}\PYG{p}{(}\PYG{n+nx}{genre}\PYG{p}{);}
+
+      \PYG{k}{for} \PYG{p}{(}\PYG{k+kd}{let} \PYG{n+nx}{movie} \PYG{k}{of} \PYG{n+nx}{movies}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+	\PYG{n+nx}{cat}\PYG{p}{.}\PYG{n+nx}{addMovie}\PYG{p}{(}\PYG{n+nx}{movie}\PYG{p}{);}
+      \PYG{p}{\PYGZcb{}}
+
+      \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{\PYGZus{}categories}\PYG{p}{.}\PYG{n+nx}{push}\PYG{p}{(}\PYG{n+nx}{cat}\PYG{p}{);}	
+    \PYG{p}{\PYGZcb{}}
+\end{Verbatim}

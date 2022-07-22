@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+      \PYG{n+nx}{hide}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+        \PYG{k}{if} \PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{\PYGZus{}is\PYGZus{}visible} \PYG{o}{===} \PYG{k+kc}{true}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+	  \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{\PYGZus{}is\PYGZus{}visible} \PYG{o}{=} \PYG{k+kc}{false}\PYG{p}{;}
+	  \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{\PYGZus{}root}\PYG{p}{.}\PYG{n+nx}{style}\PYG{p}{.}\PYG{n+nx}{display} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}none\PYGZsq{}}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+      \PYG{p}{\PYGZcb{}}
+\end{Verbatim}

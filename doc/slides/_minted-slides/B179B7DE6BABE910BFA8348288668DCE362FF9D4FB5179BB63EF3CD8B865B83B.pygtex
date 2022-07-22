@@ -1,0 +1,21 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+      \PYG{n+nx}{update}\PYG{p}{(}\PYG{n+nx}{movie}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{k+kr}{const} \PYG{n+nx}{prefix} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}\PYGZsh{}movie\PYGZus{}info\PYGZus{}\PYGZus{}content\PYGZus{}\PYGZus{}\PYGZsq{}}\PYG{p}{;}
+
+        \PYG{k+kr}{const} \PYG{n+nx}{elements} \PYG{o}{=} \PYG{p}{\PYGZob{}}
+          \PYG{l+s+s1}{\PYGZsq{}title\PYGZsq{}}\PYG{o}{:} \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{querySelector}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}.movie\PYGZus{}info\PYGZus{}\PYGZus{}header\PYGZus{}\PYGZus{}title\PYGZsq{}}\PYG{p}{),}
+          \PYG{l+s+s1}{\PYGZsq{}img\PYGZsq{}}\PYG{o}{:} \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{querySelector}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}.movie\PYGZus{}info\PYGZus{}\PYGZus{}content img\PYGZsq{}}\PYG{p}{),}
+          \PYG{l+s+s1}{\PYGZsq{}genres\PYGZsq{}}\PYG{o}{:} \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{querySelector}\PYG{p}{(}\PYG{n+nx}{prefix} \PYG{o}{+} \PYG{l+s+s1}{\PYGZsq{}genres ul\PYGZsq{}}\PYG{p}{),}
+          \PYG{l+s+s1}{\PYGZsq{}release\PYGZsq{}}\PYG{o}{:} \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{querySelector}\PYG{p}{(}\PYG{n+nx}{prefix} \PYG{o}{+} \PYG{l+s+s1}{\PYGZsq{}release\PYGZus{}date\PYGZsq{}}\PYG{p}{),}
+          \PYG{l+s+s1}{\PYGZsq{}rated\PYGZsq{}}\PYG{o}{:} \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{querySelector}\PYG{p}{(}\PYG{n+nx}{prefix} \PYG{o}{+} \PYG{l+s+s1}{\PYGZsq{}rated\PYGZsq{}}\PYG{p}{),}
+          \PYG{l+s+s1}{\PYGZsq{}imdb\PYGZsq{}}\PYG{o}{:} \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{querySelector}\PYG{p}{(}\PYG{n+nx}{prefix} \PYG{o}{+} \PYG{l+s+s1}{\PYGZsq{}imdb\PYGZsq{}}\PYG{p}{),}
+          \PYG{l+s+s1}{\PYGZsq{}directors\PYGZsq{}}\PYG{o}{:} \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{querySelector}\PYG{p}{(}\PYG{n+nx}{prefix} \PYG{o}{+} \PYG{l+s+s1}{\PYGZsq{}directors ul\PYGZsq{}}\PYG{p}{),}
+          \PYG{l+s+s1}{\PYGZsq{}actors\PYGZsq{}}\PYG{o}{:} \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{querySelector}\PYG{p}{(}\PYG{n+nx}{prefix} \PYG{o}{+} \PYG{l+s+s1}{\PYGZsq{}actors ul\PYGZsq{}}\PYG{p}{),}
+          \PYG{l+s+s1}{\PYGZsq{}duration\PYGZsq{}}\PYG{o}{:} \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{querySelector}\PYG{p}{(}\PYG{n+nx}{prefix} \PYG{o}{+} \PYG{l+s+s1}{\PYGZsq{}duration\PYGZsq{}}\PYG{p}{),}
+          \PYG{l+s+s1}{\PYGZsq{}countries\PYGZsq{}}\PYG{o}{:} \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{querySelector}\PYG{p}{(}\PYG{n+nx}{prefix} \PYG{o}{+} \PYG{l+s+s1}{\PYGZsq{}countries ul\PYGZsq{}}\PYG{p}{),}
+          \PYG{l+s+s1}{\PYGZsq{}box\PYGZhy{}office\PYGZsq{}}\PYG{o}{:} \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{querySelector}\PYG{p}{(}\PYG{n+nx}{prefix} \PYG{o}{+} \PYG{l+s+s1}{\PYGZsq{}box\PYGZus{}office\PYGZsq{}}\PYG{p}{),}
+          \PYG{l+s+s1}{\PYGZsq{}summary\PYGZsq{}}\PYG{o}{:} \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{querySelector}\PYG{p}{(}\PYG{n+nx}{prefix} \PYG{o}{+} \PYG{l+s+s1}{\PYGZsq{}summary\PYGZsq{}}\PYG{p}{)}
+        \PYG{p}{\PYGZcb{};}
+
+        \PYG{c+c1}{// ...}
+\end{Verbatim}

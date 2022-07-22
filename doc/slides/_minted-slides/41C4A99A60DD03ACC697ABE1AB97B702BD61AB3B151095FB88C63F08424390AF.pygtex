@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+    \PYG{k}{@mixin}\PYG{n+nf}{ for\PYGZhy{}mobile} \PYG{err}{\PYGZob{}}
+      \PYG{k}{@media} \PYG{n+nt}{screen} \PYG{n+nt}{and} \PYG{o}{(}\PYG{n+nt}{max\PYGZhy{}width}\PYG{n+nd}{:} \PYG{n+nt}{599px}\PYG{o}{)} \PYG{err}{\PYGZob{}}
+        \PYG{k}{@content}
+      \PYG{err}{\PYGZcb{}}
+    \PYG{err}{\PYGZcb{}}
+\end{Verbatim}

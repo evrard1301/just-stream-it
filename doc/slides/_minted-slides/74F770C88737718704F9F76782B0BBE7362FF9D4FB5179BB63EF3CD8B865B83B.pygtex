@@ -1,0 +1,17 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+      \PYG{n+nx}{buildCategoryContent}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+	\PYG{k+kd}{let} \PYG{n+nx}{content} \PYG{o}{=} \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{createElement}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}div\PYGZsq{}}\PYG{p}{);}
+	\PYG{n+nx}{content}\PYG{p}{.}\PYG{n+nx}{classList}\PYG{p}{.}\PYG{n+nx}{add}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}category\PYGZus{}\PYGZus{}content\PYGZsq{}}\PYG{p}{);}
+
+        \PYG{k+kd}{let} \PYG{n+nx}{left\PYGZus{}arrow} \PYG{o}{=} \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{buildArrow}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}left\PYGZsq{}}\PYG{p}{);}
+	\PYG{n+nx}{left\PYGZus{}arrow}\PYG{p}{.}\PYG{n+nx}{addEventListener}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}click\PYGZsq{}}\PYG{p}{,}\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{\PYGZus{}left\PYGZus{}callback}\PYG{p}{);}
+	\PYG{n+nx}{content}\PYG{p}{.}\PYG{n+nx}{appendChild}\PYG{p}{(}\PYG{n+nx}{left\PYGZus{}arrow}\PYG{p}{);}
+
+	\PYG{k+kd}{let} \PYG{n+nx}{ul} \PYG{o}{=} \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{createElement}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}ul\PYGZsq{}}\PYG{p}{);}
+
+	\PYG{k}{for} \PYG{p}{(}\PYG{k+kd}{let} \PYG{n+nx}{movie} \PYG{k}{of} \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{\PYGZus{}movies}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+	  \PYG{n+nx}{ul}\PYG{p}{.}\PYG{n+nx}{appendChild}\PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{buildMovie}\PYG{p}{(}\PYG{n+nx}{movie}\PYG{p}{));}
+	\PYG{p}{\PYGZcb{}}
+
+        \PYG{c+c1}{// ...}
+\end{Verbatim}

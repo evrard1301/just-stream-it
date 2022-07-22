@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+      \PYG{p}{\PYGZlt{}}\PYG{n+nt}{div} \PYG{n+na}{class}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}movie\PYGZus{}info\PYGZus{}\PYGZus{}content\PYGZdq{}}\PYG{p}{\PYGZgt{}}
+      \PYG{p}{\PYGZlt{}}\PYG{n+nt}{img} \PYG{n+na}{src}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}https://via.placeholder.com/256\PYGZdq{}} \PYG{n+na}{alt}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}image film\PYGZdq{}}\PYG{p}{\PYGZgt{}\PYGZlt{}/}\PYG{n+nt}{img}\PYG{p}{\PYGZgt{}}
+
+      \PYG{p}{\PYGZlt{}}\PYG{n+nt}{table}\PYG{p}{\PYGZgt{}}
+      \PYG{p}{\PYGZlt{}}\PYG{n+nt}{tr}\PYG{p}{\PYGZgt{}}
+      \PYG{p}{\PYGZlt{}}\PYG{n+nt}{th}\PYG{p}{\PYGZgt{}}Genres\PYG{p}{\PYGZlt{}/}\PYG{n+nt}{th}\PYG{p}{\PYGZgt{}}
+      \PYG{p}{\PYGZlt{}}\PYG{n+nt}{td} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}movie\PYGZus{}info\PYGZus{}\PYGZus{}content\PYGZus{}\PYGZus{}genres\PYGZdq{}}\PYG{p}{\PYGZgt{}\PYGZlt{}}\PYG{n+nt}{ul}\PYG{p}{\PYGZgt{}\PYGZlt{}/}\PYG{n+nt}{ul}\PYG{p}{\PYGZgt{}\PYGZlt{}/}\PYG{n+nt}{td}\PYG{p}{\PYGZgt{}}
+      \PYG{p}{\PYGZlt{}/}\PYG{n+nt}{tr}\PYG{p}{\PYGZgt{}}
+      \PYG{p}{\PYGZlt{}}\PYG{n+nt}{tr}\PYG{p}{\PYGZgt{}}
+      \PYG{p}{\PYGZlt{}}\PYG{n+nt}{th}\PYG{p}{\PYGZgt{}}Sortie\PYG{p}{\PYGZlt{}/}\PYG{n+nt}{th}\PYG{p}{\PYGZgt{}}
+      \PYG{p}{\PYGZlt{}}\PYG{n+nt}{td} \PYG{n+na}{id}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}movie\PYGZus{}info\PYGZus{}\PYGZus{}content\PYGZus{}\PYGZus{}release\PYGZus{}date\PYGZdq{}}\PYG{p}{\PYGZgt{}\PYGZlt{}/}\PYG{n+nt}{td}\PYG{p}{\PYGZgt{}}
+      \PYG{p}{\PYGZlt{}/}\PYG{n+nt}{tr}\PYG{p}{\PYGZgt{}}
+      \PYG{c}{\PYGZlt{}!\PYGZhy{}\PYGZhy{} ... \PYGZhy{}\PYGZhy{}\PYGZgt{}}
+\end{Verbatim}

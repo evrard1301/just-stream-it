@@ -1,0 +1,13 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+      \PYG{n+nx}{elements}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}title\PYGZsq{}}\PYG{p}{].}\PYG{n+nx}{innerText} \PYG{o}{=} \PYG{n+nx}{movie}\PYG{p}{.}\PYG{n+nx}{title}\PYG{p}{;}
+      \PYG{n+nx}{elements}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}img\PYGZsq{}}\PYG{p}{].}\PYG{n+nx}{setAttribute}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}src\PYGZsq{}}\PYG{p}{,} \PYG{n+nx}{movie}\PYG{p}{.}\PYG{n+nx}{image\PYGZus{}url}\PYG{p}{);}
+
+      \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{buildList}\PYG{p}{(}\PYG{n+nx}{elements}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}genres\PYGZsq{}}\PYG{p}{],} \PYG{n+nx}{movie}\PYG{p}{.}\PYG{n+nx}{genres}\PYG{p}{);}
+      \PYG{n+nx}{elements}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}release\PYGZsq{}}\PYG{p}{].}\PYG{n+nx}{innerText} \PYG{o}{=} \PYG{n+nx}{movie}\PYG{p}{.}\PYG{n+nx}{release\PYGZus{}date}\PYG{p}{.}\PYG{n+nx}{toDateString}\PYG{p}{();}
+      \PYG{n+nx}{elements}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}rated\PYGZsq{}}\PYG{p}{].}\PYG{n+nx}{innerText} \PYG{o}{=} \PYG{n+nx}{movie}\PYG{p}{.}\PYG{n+nx}{rated}\PYG{p}{;}
+      \PYG{n+nx}{elements}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}imdb\PYGZsq{}}\PYG{p}{].}\PYG{n+nx}{innerText} \PYG{o}{=} \PYG{n+nx}{movie}\PYG{p}{.}\PYG{n+nx}{imdb\PYGZus{}score}\PYG{p}{;}
+      \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{buildList}\PYG{p}{(}\PYG{n+nx}{elements}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}directors\PYGZsq{}}\PYG{p}{],} \PYG{n+nx}{movie}\PYG{p}{.}\PYG{n+nx}{directors}\PYG{p}{);}
+      \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{buildList}\PYG{p}{(}\PYG{n+nx}{elements}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}actors\PYGZsq{}}\PYG{p}{],} \PYG{n+nx}{movie}\PYG{p}{.}\PYG{n+nx}{actors}\PYG{p}{);}
+
+      \PYG{c+c1}{// ...}
+\end{Verbatim}
