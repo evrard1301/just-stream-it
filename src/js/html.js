@@ -114,6 +114,8 @@ class Modal {
      * @param {array} values - The inner texts of the list items.
      **/
     buildList(element, values) {
+	element.innerText = '';
+	
 	for (const val of values) {
 	    const li = document.createElement('li');
 	    li.innerText = val;
